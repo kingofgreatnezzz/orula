@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 27, 77, 46; /* ORULA dark green */
+  --background-start-rgb: 245, 237, 214; /* ORULA cream */
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 245, 237, 214; /* ORULA cream */
+    --background-start-rgb: 27, 77, 46; /* ORULA dark green */
+    --background-end-rgb: 58, 125, 68; /* ORULA medium green */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* ORULA Green scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5EDD6; /* ORULA cream */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #5BA55C, #8BBF4A);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #3A7D44, #5BA55C);
+}
+
+/* Selection color - Green theme */
+::selection {
+  background-color: rgba(91, 165, 92, 0.3); /* #5BA55C with opacity */
+  color: #1B4D2E;
+}
+
+/* ORULA Green focus styles */
+*:focus {
+  outline: 2px solid rgba(91, 165, 92, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px;
+}
